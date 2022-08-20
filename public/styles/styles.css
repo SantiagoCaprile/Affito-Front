@@ -1,0 +1,118 @@
+:root{
+    --color-primary: #1D3557;
+    --color-secondary: #457B9D;
+    --color-tertiary: #A8DADC;
+    --color-background: #F1FAEE;
+    --color-error: #992933;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+nav{
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--color-primary);
+    margin-bottom: 30px;
+    padding: 10px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.contenido{
+    align-self: center;
+    width: 80%;
+    height: 90%;
+    border-radius: 10px;
+    padding: 40px 30px;
+    box-shadow: #9ca3af 0px 0px 10px;
+    background-color: #fff;
+}
+.principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.pestania{
+    text-decoration: none;
+    font-size: 30px;
+    margin: 0px 20px;
+    padding: 5px;
+    color: var(--color-tertiary);
+    border: var(--color);
+}
+.pestania:hover{
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+.filtros-botones{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 20px 0px;
+}
+.filtros{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px 40px 20px;
+}
+.izq, .der{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.campo-filtro{
+    font-size: 15px;
+    align-self: center;
+    height: 100%;
+    margin: 0 5px;
+    min-width: 120px;
+    text-align: center;
+}
+button{
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding: 5px;
+}
+button:hover{
+    transform: scale(1.1);
+    transition-duration: 300ms;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+}
+.btn-filtrar{
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+}
+.btn-crear{
+    margin: 0px;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+}
+.btn-ver-mas{
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    width: 35px;
+    border-radius: 50%;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+th{
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/infoCliente.css">
+    <title>Cliente</title>
+</head>
+<body>
+    <nav>
+        <h1>Información del Cliente</h1>
+    </nav>
+    <div class="principal">
+        <div class="contenido col">
+            <div class="row">
+                <h2>Información del cliente</h2>
+                <div>
+                    <button class="btn-crear">Editar</button>
+                    <button class="btn-volver">Volver</button>
+                </div>
+            </div>
+            <div class="box">
+                <p>Nombre/Razón Social: <span id="nombre-cliente">...</span></p>
+                <p>CUIT/CUIL: <span id="cuit-cliente">...</span></p>
+                <p>Condición frente al IVA: <span id="iva-cliente">...</span></p>
+            </div>
+            <div class="box">
+                <p>Domicilio: <span id="domicilio-cliente">...</span></p>
+                <p>Localidad: <span id="localidad-cliente">...</span></p>
+                <p>Email: <span id="email-cliente">...</span></p>
+                <p>Celular: <span id="cel-cliente">...</span></p>
+                <p>Teléfono: <span id="telefono-cliente">...</span></p>
+            </div>
+            <div class="tabla-principal">
+                <h2>Propiedades</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Domicilio</th>
+                            <th>Oficina</th>
+                            <th>Condición</th>
+                            <th>Estado</th>
+                            <th>Ver Mas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="propiedades-cliente">
+                        <tr>
+                            <td>Av Pellegrini 123</td>
+                            <td>Oficina</td>
+                            <td>Inquilino</td>
+                            <td>Alquilada</td>
+                            <td><button class="btn-ver-mas">+</button></td>
+                        </tr>
+                        <tr>
+                            <td>Bv Oroño 1234</td>
+                            <td>Casa</td>
+                            <td>Propietario</td>
+                            <td>Disponible</td>
+                            <td><button class="btn-ver-mas">+</button></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+nav {
+    justify-content: center;
+}
+.div-de-opciones{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0px;
+}
+.div-de-opciones>div{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-crear{
+    margin-left: 20px;
+}
+.btn-cancelar{
+    background-color: var(--color-error);
+    color: #fff;
+}

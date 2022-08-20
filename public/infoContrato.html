@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/infoContrato.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <title>Contrato</title>
+</head>
+<body>
+    <nav>
+        <h1>Información del Contrato</h1>
+    </nav>
+    <div class="principal">
+        <div class="contenido col">
+            <div class="row">
+                <h2>Información del Contrato</h2>
+                <a href="./infoPropiedad.html">
+                    <button>Volver</button>
+                </a>
+            </div>
+            <div class="box">
+                <div class="row">
+                    <p>Destino: </p>
+                    <p id="destino-contrato">...</p>
+                </div>
+                <div class="row">
+                    <p>Fecha de Inicio: </p>
+                    <p id="fecha-inicio-contrato">...</p>
+                </div>
+                <div class="row">
+                    <p>Fecha de Fin: </p>
+                    <p id="fecha-fin-contrato">...</p>
+                </div>
+                <div class="row">
+                    <div class="box">
+                        <div class="row">
+                            <h2>Inquilino</h2>
+                            <button class="btn-ver-mas">+</button>
+                        </div>
+                        <p class="datos-cliente">
+                          Nombre: <span id="nombre-inquilino"></span>
+                        </p>
+                        <p class="datos-cliente">Celular: <span id="inquilino"></span></p>
+                        <p class="datos-cliente">
+                          CUIT/CUIL: <span id="cuit-inquilino"></span>
+                        </p>
+                    </div>
+                    <div class="box">
+                        <div class="row">
+                            <h2>Garantes</h2>
+                            <button class="btn-ver-mas">+</button>
+                        </div>
+                        <p class="datos-cliente">
+                          Nombre: <span id="nombre-garante"></span>
+                        </p>
+                        <p class="datos-cliente">Celular: <span id="cel-garante"></span></p>
+                        <p class="datos-cliente">
+                          CUIT/CUIL: <span id="cuit-garante"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <p>Monto: <span id="monto-contrato"></span></p>
+                <p>Moneda: <span id="moneda"></span></p>
+                <p>Intereses mora diaria: <span id="interes-mora"></span></p>
+                <p>% comisión mensual: <span id="comision-mensual"></span></p>
+                <p>% comisión celebración: <span id="comision-celebracion"></span></p>
+            </div>
+            <div class="row mas-centrado">
+                <div class="box">
+                    <p>Estado: <span id="estado"></span></p>
+                    <p>Monto Celebración: <span id="monto"></span></p>
+                    <p>Cuota Pendiente: <span id="cuota"></span></p>
+                </div>
+                <div class="box">
+                    <p>Descripción</p>
+                    <p id="descripcion">...</p>
+                    <p>Monto rescisión anticipada pendiente: $<span id="monto-rescision-pend"></span></p>
+                </div>
+            </div>
+            <div class="row mas-centrado">
+                <button class="btn-crear">Cargar Pago</button>
+                <button class="btn-cancelar">Rescindir</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Aca se carga un pago!!!</h2>
+            <span class="close">&times;</span>
+            <p>Por favor, cargue el pago</p>
+          </div>
+          <div class="modal-body">
+            <!--los campos se cargaran segun lo que ponga el usuario-->
+          </div>
+        </div>
+    </div>
+</body>
+</html>

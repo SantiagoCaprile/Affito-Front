@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/infoPropiedad.css">
+    <link rel="stylesheet" href="../styles/modal.css">
+    <title>Propiedad</title>
+</head>
+<body>
+    <nav>
+        <h1>Información de la Propiedad</h1>
+    </nav>
+    <div class="principal">
+        <div class="contenido col">
+            <div class="row">
+                <h2>Información de la Propiedad</h2>
+                <div>
+                    <button class="btn-crear">Editar</button>
+                    <button class="btn-volver">Volver</button>
+                </div>
+            </div>
+            <div class="row mas-centrado">
+                <div>
+                    <p>Domicilio: <span id="domicilio">...</span></p>
+                    <p>Localidad: <span id="localidad">...</span></p>
+                </div>
+                <div>
+                    <p>Tipo: <span id="tipo-prop">...</span></p>
+                    <p>m&sup2; <span id="m2">...</span></p>
+                </div>
+            </div>
+            <div class="row centro">
+                <p>Descripción</p>
+                <p id="descripcion">...</p>
+            </div>
+            <div class="row mas-centrado">
+                <h2>Estado actual: <span id="estado-prop">...</span></h2>
+                <div>
+                    <button>Alquilar</button>
+                    <button>Señar</button>
+                </div>
+            </div>
+            <div class="tabla-principal">
+                <h2>Historial</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operación</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alquiler</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>Venta</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                </table>
+            </div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2>Cargar Seña</h2>
+                    <span class="close">&times;</span>
+                    <p>Por favor, cargue la seña</p>
+                  </div>
+                  <div class="modal-body">
+                    <!--los campos se cargaran segun lo que ponga el usuario-->
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

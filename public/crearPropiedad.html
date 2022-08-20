@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/crearPropiedad.css" />
+    <title>Crear Propiedad</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Creación de Propiedad</h1>
+    </nav>
+    <div class="contenido">
+      <h2 class="titulo">Por favor, ingrese los datos de la nueva propiedad</h2>
+      <form class="col">
+        <div class="box">
+          <fieldset>
+            <label for="tipo-propiedad">Tipo</label>
+            <select name="tipo-propiedad" id="tipo-propiedad">
+              <option value="">Seleccione</option>
+              <option value="Casa">Casa</option>
+              <option value="Departamento">Departamento</option>
+              <option value="Local">Local</option>
+              <option value="Oficina">Oficina</option>
+              <option value="Terreno">Terreno</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="m2">Dimensión (m&sup2)</label>
+            <input type="number" class="input-chiquito" name="m2" id="m2" />
+          </fieldset>
+        </div>
+        <div class="box">
+          <label for="descripcion">Descripcion</label>
+          <textarea
+            name="descripcion"
+            id="descripcion"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <div class="box">
+          <h2>Propietario seleccionado</h2>
+          <p class="datos-prop">
+            Nombre: <span id="nombre-propietario"></span>
+          </p>
+          <p class="datos-prop">Celular: <span id="cel-propietario"></span></p>
+          <p class="datos-prop">
+            CUIT/CUIL: <span id="cuit-propietario"></span>
+          </p>
+        </div>
+        <div class="box">
+          <div class="der col col-datos">
+            <h2>Domicilio</h2>
+            <fieldset>
+              <label for="localidad">Localidad</label>
+              <select name="localidad" id="localidad">
+                <option value="">Seleccione</option>
+                <option value="Capital Federal">Capital Federal</option>
+                <option value="Rosario">Rosario</option>
+                <option value="Santa Fe">Santa Fe</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <label for="calle">Calle</label>
+              <input type="text" name="calle" id="calle" />
+            </fieldset>
+            <div class="row datos-direc">
+              <fieldset>
+                <label for="altura">Altura</label>
+                <input
+                  class="input-chiquito"
+                  type="text"
+                  name="altura"
+                  id="altura"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="piso">Piso</label>
+                <input
+                  class="input-chiquito"
+                  type="text"
+                  name="piso"
+                  id="piso"
+                  placeholder="-"
+                />
+              </fieldset>
+              <fieldset>
+                <label for="dpto">Dpto</label>
+                <input
+                  class="input-chiquito"
+                  type="text"
+                  name="dpto"
+                  id="dpto"
+                  placeholder="-"
+                />
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="izq">
+          <button class="btn-primario">Agregar Propietario</button>
+        </div>
+        <div class="der">
+          <a href="./index.html">
+            <button type="button" class="btn-cancelar">Cancelar</button>
+          </a>
+          <button class="btn-primario" id="btn-crear-propiedad">
+            Crear Propiedad
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

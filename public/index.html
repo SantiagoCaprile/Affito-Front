@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script src="./js/index.js"></script>
+    <title>Principal</title>
+</head>
+<body>
+    <nav>
+        <a class="pestania" href="./index.html">Propiedades</a>
+        <a class="pestania" href="./clientes.html">Clientes</a>
+    </nav>
+    <div class="principal">
+        <div class="contenido">
+            <div class="filtros-botones">
+                <div class="izq">
+                <button class="btn-filtrar">Alquileres</button>
+                <button class="btn-filtrar">Ventas</button>
+                </div>
+                <div class="der">
+                    <a href="./crearPropiedad.html">
+                        <button class="btn-crear">Nueva +</button>
+                    </a>
+                    <button class="btn-filtrar">Alquiladas</button>
+                </div>
+            </div>
+            <div class="filtros">
+                <div class="izq">
+                    <select class="campo-filtro" name="tipo" id="tipo">
+                    <option value="">Tipo</option>
+                    <option value="casa">Casa</option>
+                    <option value="departamento">Departamento</option>
+                    <option value="galpon">Galpón</option>
+                    <option value="oficina">Oficina</option>
+                    <option value="terreno">Terreno</option>
+                    <option value="local">Local</option>
+                    <option value="otros">Otro</option>
+                    </select>
+                    <select class="campo-filtro" name="moneda" id="moneda">
+                        <option value="">Monedas</option>
+                        <option value="pesos">Pesos</option>
+                        <option value="dolares">Dólares</option>
+                    </select>
+                    <input class="campo-filtro" type="number" name="min" id="min" placeholder="Monto Min">
+                    <input class="campo-filtro" type="number" name="max" id="max" placeholder="Monto Max">
+                </div>
+                <div class="der">
+                    <button class="btn-filtrar">Filtrar</button>
+                    <button class="btn-filtrar">Limpiar</button>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Moneda</th>
+                        <th>Precio</th>
+                        <th>Dimensión</th>
+                        <th>Descripcion</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Casa</td>
+                        <td>Pesos</td>
+                        <td>$1,000,000</td>
+                        <td>100m2</td>
+                        <td>Casa en buen estado</td>
+                        <td>
+                            <button class="btn-ver-mas">+</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

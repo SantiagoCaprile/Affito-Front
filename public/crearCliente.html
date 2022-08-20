@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/crearCliente.css">
+    <script src="./js/crearCliente.js"></script>
+    <title>CrearCliente</title>
+  </head>
+  <body>
+    <nav>
+        <h1>Creación de Cliente</h1>
+    </nav>
+    <div class="contenido">
+        <h2 class="titulo">Por favor, ingrese los datos del nuevo cliente</h2>
+      <form class="col">
+        <div class="row">
+          <fieldset class="form__group field">
+            <label class="form__label" for="nombre">Nombre/Razón Social</label>
+            <input class="form__field" type="text" name="nombre" id="nombre" placeholder="Nombre" />
+          </fieldset>
+          <fieldset>
+            <label for="cuit">CUIT/CUIL</label>
+            <input type="text" name="cuit" id="cuit" placeholder="CUIT" />
+          </fieldset>
+          <fieldset>
+            <label for="iva">Condición frente al IVA</label>
+            <select name="iva" id="iva">
+              <option value="">Seleccione</option>
+              <option value="Responsable Inscripto">
+                Responsable Inscripto
+              </option>
+              <option value="Consumidor Final">Consumidor Final</option>
+              <option value="Exento">Responsable no Inscripto</option>
+            </select>
+          </fieldset>
+        </div>
+        <div class="row">
+          <div class="izq col col-datos">
+            <h2>Contacto</h2>
+            <fieldset>
+              <label for="mail">Mail</label>
+              <input type="text" name="mail" id="mail" />
+            </fieldset>
+            <fieldset>
+              <label for="cel">Celular</label>
+              <input type="text" name="cel" id="cel" />
+            </fieldset>
+            <fieldset>
+              <label for="tel">Teléfono</label>
+              <input type="text" name="tel" id="tel" />
+            </fieldset>
+          </div>
+          <div class="der col col-datos">
+            <h2>Domicilio</h2>
+            <fieldset>
+              <label for="localidad">Localidad</label>
+              <select name="localidad" id="localidad">
+                <option value="">Seleccione</option>
+                <option value="Capital Federal">Capital Federal</option>
+                <option value="Rosario">Rosario</option>
+                <option value="Santa Fe">Santa Fe</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <label for="calle">Calle</label>
+              <input type="text" name="calle" id="calle" />
+            </fieldset>
+            <div class="row datos-direc">
+                <fieldset class="col">
+                    <label for="altura">Altura</label>
+                    <input class="input-chiquito" type="text" name="altura" id="altura" />
+                </fieldset>
+                <fieldset class="col">
+                    <label for="piso">Piso</label>
+                    <input class="input-chiquito" type="text" name="piso" id="piso" placeholder="-" />
+                </fieldset>
+                <fieldset class="col">
+                    <label for="dpto">Dpto</label>
+                    <input class="input-chiquito" type="text" name="dpto" id="dpto" placeholder="-" />
+                </fieldset>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="izq">
+            <button class="btn-primario">Agregar Representante</button>
+          </div>
+          <div class="der">
+            <a href="./clientes.html">
+                <button type="button" class="btn-cancelar">Cancelar</button>
+            </a>
+            <button class="btn-primario" id="btn-crear-cliente">Crear Cliente</button>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>

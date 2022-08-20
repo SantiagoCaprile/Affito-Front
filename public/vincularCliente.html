@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/vincularCliente.css">
+    <title>Vincular Cliente</title>
+</head>
+<body>
+    <nav>
+        <h1>Vincular Cliente</h1>
+    </nav>
+    <div class="contenido">
+        <div class="div-de-opciones">
+            <p>Si no existe puede crear uno nuevo</p>
+            <button class="btn-crear">Crear Nuevo</button>
+            <button class="btn-cancelar">Cancelar</button>
+        </div>
+        <p>Si ya existe puede seleccionarlo desde la lista</p>
+        <div class="filtros">
+            <div>
+                <input class="campo-filtro" type="number" name="cod-cliente" id="cod-cliente" placeholder="Codigo">
+                <input class="campo-filtro" type="number" name="cuit-cliente" id="cuit-cliente" placeholder="CUIT">
+                <input class="campo-filtro" type="text" name="nombre-cliente" id="nombre-cliente" placeholder="Nombre">
+                <select class="campo-filtro" name="tipo-cliente" id="tipo-cliente">
+                    <option value="">Tipo</option>
+                    <option value="inquilino">Inquilino</option>
+                    <option value="propietario">Propietario</option>
+                    <option value="garante">Garante</option>
+                </select>
+            </div>
+            <div>
+                <button class="btn-filtrar">Filtrar</button>
+                <button class="btn-filtrar">Limpiar</button>
+            </div>        
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Tipo</th>
+                    <th>Nombre/Razon Social</th>
+                    <th>CUIT/CUIL</th>
+                    <th>Contacto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Inquilino</td>
+                    <td>Juan Perez</td>
+                    <td>20-12345678-9</td>
+                    <td>Tel: 4219982</td>
+                    <td>
+                        <button class="btn-primario'">Seleccionar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Propietario
+                        Inquilino
+                    </td>
+                    <td>Juan Gonzalez</td>
+                    <td>20-12345678-9</td>
+                    <td>Tel: 4219232</td>
+                    <td>
+                        <button>Seleccionar</button>
+                    </td>
+                </tr>
+        </table>
+    </div>
+</body>
+</html>

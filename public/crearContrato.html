@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/crearContrato.css" />
+    <title>Crear Contrato</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Creación de Contrato</h1>
+    </nav>
+    <div class="contenido">
+      <h2 class="titulo">Por favor, ingrese los datos</h2>
+      <form class="col">
+        <div class="box campos-contrato">
+          <fieldset>
+            <label for="destino">Destino</label>
+            <select name="destino" id="destino">
+              <option value="">Seleccione</option>
+              <option value="vivienda">Vivienda Familia</option>
+              <option value="comercial">Comercial</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="fecha-inicio">Fecha de Inicio</label>
+            <input type="date" name="fecha-inicio" id="fecha-inicio" />
+          </fieldset>
+          <fieldset>
+            <label for="fecha-fin">Fecha de Fin</label>
+            <input type="date" name="fecha-fin" id="fecha-fin" />
+          </fieldset>
+        </div>
+        <div class="box campos-contrato">
+          <fieldset>
+            <label for="monto">Monto</label>
+            <input type="number" name="monto" id="monto" />
+          </fieldset>
+          <fieldset>
+            <label for="moneda">Moneda</label>
+            <select name="moneda" id="moneda">
+              <option value="">Seleccione</option>
+              <option value="pesos">Pesos Arg</option>
+              <option value="dolares">Dolares</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="intereses-por-dia">Intereses mora diaria</label>
+            <input type="number" name="intereses-por-dia" id="intereses-por-dia" />
+          </fieldset>
+          <fieldset>
+            <label for="comision-mensual">% comision mensual</label>
+            <input type="number" name="comision-mensual" id="comision-mensual" />
+          </fieldset>
+          <fieldset>
+            <label for="comision-celebracion">% comision celebracion</label>
+            <input type="number" name="comision-celebracion" id="comision-celebracion" />
+          </fieldset>
+        </div>
+        <div class="box row">
+            <div class="box">
+            <h2>Inquilino seleccionado</h2>
+            <p class="datos-prop">
+                Nombre: <span id="nombre-propietario"></span>
+            </p>
+            <p class="datos-prop">
+                Celular: <span id="cel-propietario"></span>
+            </p>
+            <p class="datos-prop">
+                CUIT/CUIL: <span id="cuit-propietario"></span>
+            </p>
+            </div>
+            <div class="box">
+                <h2>Garantes seleccionados</h2>
+                <p class="datos-prop">
+                    Nombre: <span id="nombre-propietario"></span>
+                </p>
+                <p class="datos-prop">
+                    Celular: <span id="cel-propietario"></span>
+                </p>
+                <p class="datos-prop">
+                    CUIT/CUIL: <span id="cuit-propietario"></span>
+                </p>
+            </div>
+        </div>
+        <div class="box descrip-box">
+            <label for="descripcion">Descripcion</label>
+            <textarea
+              name="descripcion"
+              id="descripcion"
+              cols="30"
+              rows="10"
+            ></textarea>
+        </div>
+      </form>
+      <div class="row">
+        <div class="izq">
+          <button class="btn-primario">Agregar Inquilino</button>
+          <button class="btn-primario">Agregar Garantes</button>
+        </div>
+        <div class="der">
+          <a href="./index.html">
+            <button type="button" class="btn-cancelar">Cancelar</button>
+          </a>
+          <button class="btn-primario" id="btn-crear-propiedad">
+            Crear Propiedad
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
