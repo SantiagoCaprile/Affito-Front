@@ -1,21 +1,5 @@
-class Master {
-    async listarClientes() {
-        const url = '/api/v1/clientes';
-        const response = await fetch(url);
-        var data = await response.json();
-        var clientes = data.data;
+import { Master } from '../../clases/master.js'
 
-        clientes = clientes.map(cliente => {
-            return {
-            cuit: cliente.cuit,
-            nombre_razon_social: cliente.nombre_razon_social,
-            celular: cliente.celular,
-            email: cliente.email
-            };
-        });
-        return clientes;
-    }
-}
 const master = new Master();
 
 window.onload = function() {
