@@ -25,4 +25,7 @@ window.onload = function() {
         console.log(err);
     });
 
+    document.getElementById("btn-volver").onclick = () => {
+        window.location.href = "clientes.html";
+    }
 }
