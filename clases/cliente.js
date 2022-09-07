@@ -36,4 +36,24 @@ export class Cliente {
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
   }
+  editarCliente() {
+      const data = {
+        cuit: this.cuit,
+        nombre_razon_social: this.nombre_razon_social,
+        celular: this.celular,
+        telefono: this.telefono,
+        email: this.email,
+        condicion_iva: this.condicion_iva,
+        domicilio: this.domicilio
+      };
+      fetch(URL + "/clientes/" + this.cuit, {
+          method: 'PUT', // or 'PUT'
+          body: JSON.stringify(data), // data can be string or {object}!
+          headers:{
+            'Content-Type': 'application/json'
+          }
+        }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+  }
 }
