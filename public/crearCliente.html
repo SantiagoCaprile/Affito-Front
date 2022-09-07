@@ -19,15 +19,17 @@
       <form class="col">
         <div class="row">
           <fieldset class="form__group field">
-            <label class="form__label" for="nombre">Nombre/Razón Social</label>
+            <label class="form__label" for="nombre">Nombre/Razón Social *</label>
             <input class="form__field" type="text" name="nombre" id="nombre" placeholder="Nombre" />
+            <p class="form_error oculto" id="nombre-error"></p>
           </fieldset>
           <fieldset>
-            <label for="cuit">CUIT/CUIL</label>
+            <label for="cuit">CUIT/CUIL *</label>
             <input type="text" name="cuit" id="cuit" placeholder="CUIT" />
+            <p class="form_error oculto" id="cuit-error"></p>
           </fieldset>
           <fieldset>
-            <label for="iva">Condición frente al IVA</label>
+            <label for="iva">Condición frente al IVA *</label>
             <select name="iva" id="iva">
               <option value="">Seleccione</option>
               <option value="Responsable Inscripto">
@@ -36,6 +38,7 @@
               <option value="Consumidor Final">Consumidor Final</option>
               <option value="Exento">Responsable no Inscripto</option>
             </select>
+            <p class="form_error oculto" id="iva-error"></p>
           </fieldset>
         </div>
         <div class="row">
@@ -43,31 +46,36 @@
             <h2>Contacto</h2>
             <fieldset>
               <label for="mail">Mail</label>
-              <input type="text" name="mail" id="mail" />
+              <input type="text" name="mail" id="mail" placeholder="affito@ejemplo.com"/>
+              <p class="form_error oculto" id="mail-error"></p>
             </fieldset>
             <fieldset>
-              <label for="cel">Celular</label>
+              <label for="cel">Celular *</label>
               <input type="text" name="cel" id="cel" />
+              <p class="form_error oculto" id="cel-error"></p>
             </fieldset>
             <fieldset>
-              <label for="tel">Teléfono</label>
+              <label for="tel">Teléfono </label>
               <input type="text" name="tel" id="tel" />
+              <p class="form_error oculto" id="tel-error"></p>
             </fieldset>
           </div>
           <div class="der col col-datos">
             <h2>Domicilio</h2>
             <fieldset>
-              <label for="localidad">Localidad</label>
+              <label for="localidad">Localidad *</label>
               <select name="localidad" id="localidad">
                 <option value="">Seleccione</option>
                 <option value="Capital Federal">Capital Federal</option>
                 <option value="Rosario">Rosario</option>
                 <option value="Santa Fe">Santa Fe</option>
               </select>
+              <p class="form_error oculto" id="localidad-error"></p>
             </fieldset>
             <fieldset>
-              <label for="calle">Calle</label>
+              <label for="calle">Calle *</label>
               <input type="text" name="calle" id="calle" />
+              <p class="form_error oculto" id="calle-error"></p>
             </fieldset>
             <div class="row datos-direc">
                 <fieldset class="col">
@@ -83,6 +91,9 @@
                     <input class="input-chiquito" type="text" name="dpto" id="dpto" placeholder="-" />
                 </fieldset>
             </div>
+                <p class="form_error oculto" id="altura-error"></p>
+                <p class="form_error oculto" id="piso-error"></p>
+                <p class="form_error oculto" id="dpto-error"></p>
           </div>
         </div>
       </form>

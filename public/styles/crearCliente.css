@@ -75,3 +75,12 @@ input, select, textarea {
     background-color: var(--color-primary);
     color: var(--color-tertiary);
 }
+.form_error{
+    color: var(--color-error);
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.oculto{
+    display: none;
+}
