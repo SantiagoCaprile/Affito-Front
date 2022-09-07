@@ -25,6 +25,10 @@ window.onload = function() {
         console.log(err);
     });
 
+    document.getElementById("btn-editar").onclick = () => {
+        window.location.href = "crearCliente.html?cuit=" + cuit;
+    }
+
     document.getElementById("btn-volver").onclick = () => {
         window.location.href = "clientes.html";
     }
