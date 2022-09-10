@@ -8,17 +8,46 @@ export class Cliente {
     this.telefono = telefono;
     this.email = email;
     this.condicion_iva = condicion_iva;
-    this.calle = calle;
-    this.altura = altura;
-    this.piso = piso;
-    this.dpto = dpto;
-    this.localidad = localidad;
+    this.domicilio = {
+      calle: calle,
+      altura: altura,
+      piso: piso,
+      dpto: dpto,
+      localidad: localidad
+    }
   }
   guardarCliente() {
-      const data = {cuit: this.cuit, nombre_razon_social: this.nombre_razon_social, celular: this.celular, telefono: this.telefono,
-          email: this.email, condicion_iva: this.condicion_iva, calle: this.calle, altura: this.altura, piso: this.piso, dpto: this.dpto, localidad: this.localidad};
+      const data = {
+        cuit: this.cuit,
+        nombre_razon_social: this.nombre_razon_social,
+        celular: this.celular,
+        telefono: this.telefono,
+        email: this.email,
+        condicion_iva: this.condicion_iva,
+        domicilio: this.domicilio
+      };
       fetch(URL + "/clientes", {
           method: 'POST', // or 'PUT'
+          body: JSON.stringify(data), // data can be string or {object}!
+          headers:{
+            'Content-Type': 'application/json'
+          }
+        }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+  }
+  editarCliente() {
+      const data = {
+        cuit: this.cuit,
+        nombre_razon_social: this.nombre_razon_social,
+        celular: this.celular,
+        telefono: this.telefono,
+        email: this.email,
+        condicion_iva: this.condicion_iva,
+        domicilio: this.domicilio
+      };
+      fetch(URL + "/clientes/" + this.cuit, {
+          method: 'PUT', // or 'PUT'
           body: JSON.stringify(data), // data can be string or {object}!
           headers:{
             'Content-Type': 'application/json'

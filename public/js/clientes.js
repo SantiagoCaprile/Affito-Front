@@ -32,7 +32,6 @@ window.onload = function() {
             const clientes = data.clientes;
             for (let i = 0; i < botonesMas.length; i++) {
                 botonesMas[i].onclick = function(){
-                    console.log(clientes[i].cuit);
                     window.location.href = `./infoCliente.html?id=${clientes[i].cuit}`;
                 }
             }
