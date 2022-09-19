@@ -33,7 +33,7 @@ window.onload = function() {
           const props = data.props;
           for (let i = 0; i < botonesMas.length; i++) {
               botonesMas[i].onclick = function(){
-                  window.location.href = `./infoCliente.html?id=${props[i].cod_prop}`;
+                  window.location.href = `./infoPropiedad.html?id=${props[i]._id}`;
               }
           }
       })

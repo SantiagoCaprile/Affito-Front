@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/infoPropiedad.css">
     <link rel="stylesheet" href="./styles/modal.css">
+    <script type="module" src="./js/infoPropiedad.js"></script>
     <title>Propiedad</title>
 </head>
 <body>
@@ -19,8 +20,8 @@
             <div class="row">
                 <h2>Información de la Propiedad</h2>
                 <div>
-                    <button class="btn-crear">Editar</button>
-                    <button class="btn-volver">Volver</button>
+                    <button id="btn-editar" class="btn-crear">Editar</button>
+                    <button id="btn-volver" class="btn-volver">Volver</button>
                 </div>
             </div>
             <div class="row mas-centrado">
@@ -30,15 +31,17 @@
                 </div>
                 <div>
                     <p>Tipo: <span id="tipo-prop">...</span></p>
-                    <p>m&sup2; <span id="m2">...</span></p>
+                    <p>Superficie: <span id="m2">...</span></p>
                 </div>
             </div>
             <div class="row centro">
-                <p>Descripción</p>
                 <p id="descripcion">...</p>
             </div>
-            <div class="row mas-centrado">
-                <h2>Estado actual: <span id="estado-prop">...</span></h2>
+            <div class="row">
+                <div>
+                    <h2>Precio: <span id="precio-prop">...</span></h2>
+                    <h2>Estado actual: <span id="estado-prop">...</span></h2>
+                </div>
                 <div>
                     <button>Alquilar</button>
                     <button>Señar</button>

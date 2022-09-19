@@ -25,7 +25,7 @@ export class Master {
     }
 
     async listarPropiedades() {
-        const listaPropiedades = await fetch(/*URL*/ "http://localhost:5000" + '/propiedades')
+        const listaPropiedades = await fetch(/*URL*/ 'http://localhost:5000' + '/propiedades')
         .then(response => response.json())
         .then(data => data.data)
         .then(datosPropiedades => datosPropiedades.map(prop => {
@@ -36,9 +36,17 @@ export class Master {
                 precio: prop.precio,
                 moneda: prop.moneda,
                 estado: prop.estado,
+                _id: prop._id
                 };
             })
         );
         return listaPropiedades;
+    }
+
+    async buscarPropiedad(_id) {
+        const response = await fetch('http://localhost:5000' + '/propiedades/' + _id)
+            .then(response => response.json())
+            .then(data => data.data);
+        return response;
     }
 }
