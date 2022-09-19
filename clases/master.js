@@ -23,4 +23,22 @@ export class Master {
             .then(data => data.data);
         return response;
     }
+
+    async listarPropiedades() {
+        const listaPropiedades = await fetch(/*URL*/ "http://localhost:5000" + '/propiedades')
+        .then(response => response.json())
+        .then(data => data.data)
+        .then(datosPropiedades => datosPropiedades.map(prop => {
+            return {
+                tipo: prop.tipo,
+                dimension: prop.dimension,
+                domicilio: prop.domicilio,
+                precio: prop.precio,
+                moneda: prop.moneda,
+                estado: prop.estado,
+                };
+            })
+        );
+        return listaPropiedades;
+    }
 }
