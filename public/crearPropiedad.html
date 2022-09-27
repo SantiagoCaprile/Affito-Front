@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
     <link rel="stylesheet" href="./styles/crearPropiedad.css" />
+    <script type="module" src="./js/crearPropiedad.js"></script>
     <title>Crear Propiedad</title>
   </head>
   <body>
@@ -18,7 +19,7 @@
       <form class="col">
         <div class="box">
           <fieldset>
-            <label for="tipo-propiedad">Tipo</label>
+            <label for="tipo-propiedad">Tipo *</label>
             <select name="tipo-propiedad" id="tipo-propiedad">
               <option value="">Seleccione</option>
               <option value="Casa">Casa</option>
@@ -35,6 +36,29 @@
           </fieldset>
         </div>
         <div class="box">
+          <fieldset>
+            <label for="estado">Estado *</label>
+            <select name="estado" id="estado">
+              <option value="">Seleccione</option>
+              <option value="Disponible">Disponible</option>
+              <option value="Ocupada">Ocupada</option>
+              <option value="No disponible">No disponible</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <label for="precio">Precio</label>
+            <input type="number" class="input-chiquito" name="precio" id="precio" />
+          </fieldset>
+          <fieldset>
+            <label for="moneda">Moneda</label>
+            <select name="moneda" id="moneda">
+              <option value="">Seleccione</option>
+              <option value="ARS">ARS</option>
+              <option value="USD">USD</option>
+            </select>
+          </fieldset>
+        </div>
+        <div class="box">
           <label for="descripcion">Descripcion</label>
           <textarea
             name="descripcion"
@@ -44,20 +68,10 @@
           ></textarea>
         </div>
         <div class="box">
-          <h2>Propietario seleccionado</h2>
-          <p class="datos-prop">
-            Nombre: <span id="nombre-propietario"></span>
-          </p>
-          <p class="datos-prop">Celular: <span id="cel-propietario"></span></p>
-          <p class="datos-prop">
-            CUIT/CUIL: <span id="cuit-propietario"></span>
-          </p>
-        </div>
-        <div class="box">
           <div class="der col col-datos">
             <h2>Domicilio</h2>
             <fieldset>
-              <label for="localidad">Localidad</label>
+              <label for="localidad">Localidad *</label>
               <select name="localidad" id="localidad">
                 <option value="">Seleccione</option>
                 <option value="Capital Federal">Capital Federal</option>
@@ -66,7 +80,7 @@
               </select>
             </fieldset>
             <fieldset>
-              <label for="calle">Calle</label>
+              <label for="calle">Calle *</label>
               <input type="text" name="calle" id="calle" />
             </fieldset>
             <div class="row datos-direc">
@@ -101,6 +115,16 @@
               </fieldset>
             </div>
           </div>
+        </div>
+        <div id="propietario-box"class="box">
+          <h2>Propietario seleccionado</h2>
+          <p class="datos-prop">
+            Nombre: <span id="nombre-propietario"></span>
+          </p>
+          <p class="datos-prop">Celular: <span id="cel-propietario"></span></p>
+          <p class="datos-prop">
+            CUIT/CUIL: <span id="cuit-propietario"></span>
+          </p>
         </div>
       </form>
       <div class="row">
