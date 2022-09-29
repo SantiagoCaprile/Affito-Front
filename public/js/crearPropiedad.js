@@ -1,4 +1,7 @@
 import { Propiedad } from '../../clases/propiedad.js';
+import { Master } from '../../clases/master.js'
+
+const master = new Master();
 
 window.onload = function() {
     document.getElementById("propietario-box").style.display = "none";
@@ -39,11 +42,28 @@ window.onload = function() {
     let modal = document.querySelectorAll(".modal")[0];
     let modalC = document.querySelectorAll(".modal-container")[0];
 
+    
+    const tbody = document.querySelector('tbody');
+    let mostrar_datos = async() => {
+        let clientes = await master.listarClientes();
+        tbody.innerHTML = '';
+        for (let i = 0; i < clientes.length; i++) {
+            let fila = tbody.insertRow();
+            fila.insertCell().innerHTML = clientes[i]['nombre_razon_social'];
+            fila.insertCell().innerHTML = clientes[i]['cuit'];
+            fila.insertCell().innerHTML = clientes[i]['celular'];
+            fila.insertCell().innerHTML = clientes[i]['email'];
+            fila.insertCell().innerHTML = `<button id=clientes_${i} class="btn-ver-mas">+</button>`
+        }
+        return clientes;
+    };
+    
     abrir.addEventListener("click", function(e){
         e.preventDefault();
         modalC.style.opacity = "1";
         modalC.style.visibility = "visible";
         modal.classList.toggle("modal-close");
+        mostrar_datos();
     })
     cerrar.addEventListener("click", function(){
         modal.classList.toggle("modal-close");
