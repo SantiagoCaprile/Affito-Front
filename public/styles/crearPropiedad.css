@@ -141,6 +141,7 @@ label{
 }
 .close{
   position: absolute;
+  text-align: center;
   top: 5px;
   right: 5px;
   display: inline-block;

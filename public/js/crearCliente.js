@@ -5,6 +5,7 @@ const master = new Master();
 
 window.onload = function() {
     const btn = document.getElementById("btn-crear-cliente");
+    const btnCancelar = document.getElementById("btn-cancelar");
     const cuit = document.getElementById('cuit')
     const nombre = document.getElementById('nombre')
     const cel = document.getElementById('cel')
@@ -283,5 +284,9 @@ window.onload = function() {
                 window.location.href = "/public/clientes.html"
             }
         };
+    }
+
+    btnCancelar.onclick = () => {
+        window.location.href = "/public/clientes.html"
     }
 };
