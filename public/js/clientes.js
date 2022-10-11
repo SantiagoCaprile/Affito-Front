@@ -7,14 +7,22 @@ window.onload = function() {
     let mostrar_datos = async() => {
         let clientes = await master.listarClientes();
         tbody.innerHTML = '';
-        for (let i = 0; i < clientes.length; i++) {
+        /* for (let i = 0; i < clientes.length; i++) {
             let fila = tbody.insertRow();
-            fila.insertCell().innerHTML = clientes[i]['nombre_razon_social'];
-            fila.insertCell().innerHTML = clientes[i]['cuit'];
-            fila.insertCell().innerHTML = clientes[i]['celular'];
-            fila.insertCell().innerHTML = clientes[i]['email'];
+            fila.insertCell().innerHTML = clientes[i].nombre_razon_social;
+            fila.insertCell().innerHTML = clientes[i].cuit;
+            fila.insertCell().innerHTML = clientes[i].celular;
+            fila.insertCell().innerHTML = clientes[i].email;
             fila.insertCell().innerHTML = `<button id=clientes_${i} class="btn-ver-mas">+</button>`
-        }
+        } */
+        clientes.forEach( (cliente, i) => {
+            let fila = tbody.insertRow();
+            fila.insertCell().innerHTML = cliente.nombre_razon_social;
+            fila.insertCell().innerHTML = cliente.cuit;
+            fila.insertCell().innerHTML = cliente.celular;
+            fila.insertCell().innerHTML = cliente.email;
+            fila.insertCell().innerHTML = `<button id=clientes_${i} class="btn-ver-mas">+</button>`
+        })
         return clientes;
     };
 
