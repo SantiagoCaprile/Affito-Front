@@ -3,7 +3,6 @@ import { Master } from '../../clases/master.js'
 const master = new Master();
 
 window.onload = function() {
-
     let _id = window.location.search.split('=')[1];
 
     let busqueda = async() => {
@@ -33,5 +32,9 @@ window.onload = function() {
 
     document.getElementById("btn-volver").onclick = () => {
         window.location.href = "index.html";
+    }
+
+    document.getElementById("btn-alquilar").onclick = () => {
+        window.location.href = "crearContrato.html?id=" + _id;
     }
 }
