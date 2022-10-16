@@ -7,36 +7,22 @@ window.onload = function() {
     let mostrar_datos = async() => {
         let clientes = await master.listarClientes();
         tbody.innerHTML = '';
-        for (let i = 0; i < clientes.length; i++) {
+        clientes.forEach( (cliente, i) => {
             let fila = tbody.insertRow();
-            fila.insertCell().innerHTML = clientes[i]['nombre_razon_social'];
-            fila.insertCell().innerHTML = clientes[i]['cuit'];
-            fila.insertCell().innerHTML = clientes[i]['celular'];
-            fila.insertCell().innerHTML = clientes[i]['email'];
+            fila.insertCell().innerHTML = cliente.nombre_razon_social;
+            fila.insertCell().innerHTML = cliente.cuit;
+            fila.insertCell().innerHTML = cliente.celular;
+            fila.insertCell().innerHTML = cliente.email;
             fila.insertCell().innerHTML = `<button id=clientes_${i} class="btn-ver-mas">+</button>`
-        }
-        return clientes;
+        })        
+        const botonesMas = document.getElementsByClassName("btn-ver-mas");
+        Array.from(botonesMas).forEach( (boton, i) => {
+            console.log(boton, i)
+            boton.addEventListener("click", () => {
+                window.location.href = `./infoCliente.html?id=${clientes[i].cuit}`;
+            })
+        })
     };
 
     mostrar_datos()
-        .then(function(clientes){
-            const botonesMas = document.getElementsByClassName("btn-ver-mas");
-            let data = {
-                clientes: clientes,
-                botonesMas: botonesMas
-            }
-            return data;
-        })
-        .then(function(data){
-            const botonesMas = data.botonesMas;
-            const clientes = data.clientes;
-            for (let i = 0; i < botonesMas.length; i++) {
-                botonesMas[i].onclick = function(){
-                    window.location.href = `./infoCliente.html?id=${clientes[i].cuit}`;
-                }
-            }
-        })
-        .catch(function(error){
-            console.log(error);
-        });
 };
