@@ -14,12 +14,12 @@ window.onload = function() {
             fila.insertCell().innerHTML = cliente.celular;
             fila.insertCell().innerHTML = cliente.email;
             fila.insertCell().innerHTML = `<button id=clientes_${i} class="btn-ver-mas">+</button>`
-        })        
+        })
         const botonesMas = document.getElementsByClassName("btn-ver-mas");
         Array.from(botonesMas).forEach( (boton, i) => {
-            console.log(boton, i)
             boton.addEventListener("click", () => {
                 window.location.href = `./infoCliente.html?id=${clientes[i].cuit}`;
+                console.log(clientes)
             })
         })
     };
