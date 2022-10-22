@@ -6,8 +6,15 @@ if (sessionStorage.getItem('user') === null) {
 
 window.onload = function() {
     const tbody = document.querySelector('tbody');
-    let mostrar_datos = async() => {
+    const campoCuit = document.getElementById('cuit-cliente');
+    const campoNombre = document.getElementById('nombre-cliente');
+    const btnFiltrar = document.getElementById('btn-filtrar');
+    const btnLimpiar = document.getElementById('btn-limpiar');
+    let listarTodos = async() => {
         let clientes = await master.listarClientes();
+        llenarTabla(clientes);
+    };
+    let llenarTabla = (clientes) => {
         tbody.innerHTML = '';
         clientes.forEach( (cliente, i) => {
             let fila = tbody.insertRow();
@@ -24,7 +31,25 @@ window.onload = function() {
                 console.log(clientes)
             })
         })
-    };
+    }
+    listarTodos()
 
-    mostrar_datos()
+    btnFiltrar.addEventListener('click', async(e) => {
+        e.preventDefault();
+        const filtro = {
+            cuit: campoCuit.value,
+            nombre: campoNombre.value
+        }
+        if(filtro.cuit !== '' || filtro.nombre !== '') {
+            const listaFiltrada = await master.filtrarClientes(filtro);
+            llenarTabla(listaFiltrada);
+        }
+    });
+
+    btnLimpiar.addEventListener('click', (e) => {
+        e.preventDefault();
+        campoCuit.value = '';
+        campoNombre.value = '';
+        listarTodos();
+    });
 };

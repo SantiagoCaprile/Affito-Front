@@ -1,6 +1,7 @@
 import { URL } from '../public/js/utils.js';
 
 export class Master {
+
     async listarClientes() {
         const listaClientes = await fetch(URL + '/clientes')
         .then(response => response.json())
@@ -16,6 +17,28 @@ export class Master {
         );
         return listaClientes;
     }
+
+    async filtrarClientes(filtro) {
+        const listaClientes = await fetch(URL + '/clientes/filtro', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(filtro)
+        })
+        .then(response => response.json())
+        .then(data => data.data)
+        .then(datosClientes => datosClientes.map(cliente => {
+            return {
+                cuit: cliente.cuit,
+                nombre_razon_social: cliente.nombre_razon_social,
+                celular: cliente.celular,
+                email: cliente.email
+                };
+            })
+        );
+        return listaClientes;
+    };
 
     async buscarCliente(cuit) {
         const response = await fetch(URL + '/clientes/' + cuit)

@@ -27,19 +27,12 @@
         </div>
         <div class="filtros">
             <div class="izq">
-                <input class="campo-filtro" type="number" name="cod-cliente" id="cod-cliente" placeholder="Codigo">
                 <input class="campo-filtro" type="number" name="cuit-cliente" id="cuit-cliente" placeholder="CUIT">
                 <input class="campo-filtro" type="text" name="nombre-cliente" id="nombre-cliente" placeholder="Nombre">
-                <select class="campo-filtro" name="tipo-cliente" id="tipo-cliente">
-                    <option value="">Tipo</option>
-                    <option value="inquilino">Inquilino</option>
-                    <option value="propietario">Propietario</option>
-                    <option value="garante">Garante</option>
-                </select>
             </div>
             <div class="der">
-                <button class="btn-filtrar">Filtrar</button>
-                <button class="btn-filtrar">Limpiar</button>
+                <button id="btn-filtrar">Filtrar</button>
+                <button id="btn-limpiar" >Limpiar</button>
             </div>
         </div>
         <table>
