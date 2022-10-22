@@ -1,6 +1,8 @@
 import { Master } from '../../clases/master.js'
-
 const master = new Master();
+if (sessionStorage.getItem('user') === null) {
+    window.location.href = './logIn.html';
+}
 
 window.onload = function() {
     const tbody = document.querySelector('tbody');
