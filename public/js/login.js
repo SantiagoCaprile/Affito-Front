@@ -1,5 +1,6 @@
 async function usuarioValido(user, pass) {
-    const response = await fetch('http://localhost:5000/usuarios', {
+    try {
+        const response = await fetch('http://localhost:5000/usuarios', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -12,6 +13,9 @@ async function usuarioValido(user, pass) {
     .then(response => response.json())
     .then(data => data.valid);//valid va a ser true o false
     return response;
+    } catch (error) {
+        return false;
+    }
 }
 
 window.onload = function() {
