@@ -1,60 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/styles.css"> -->
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <script type="module" src="./js/index.js"></script>
     <title>Principal</title>
 </head>
+
 <body>
-    <nav>
-        <a class="pestania" href="./index.html">Propiedades</a>
-        <a class="pestania" href="./clientes.html">Clientes</a>
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Affitto</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">Propiedades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./clientes.html">Clientes</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-secondary" id="btn-cerrar-sesion" type="submit">Cerrar Sesión</button>
+                </form>
+            </div>
+        </div>
     </nav>
-    <div class="principal">
-        <div class="contenido">
-            <div class="filtros-botones">
-                <div class="izq">
-                <button class="btn-filtrar">Alquileres</button>
-                <button class="btn-filtrar">Ventas</button>
+    <div class="d-flex align-items-center justify-content-center mt-4">
+        <div class="card w-75">
+            <div class="card-header p-4">
+                <div class="container p-2">
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-info">Alquileres</button>
+                            <button class="btn btn-info">Ventas</button>
+                        </div>
+                        <div class="col text-end">
+                            <a class="btn btn-primary btn-crear" href="./crearPropiedad.html">Nueva +</a>
+                            <button class="btn btn-outline-primary btn-filtrar">Alquiladas</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="der">
-                    <a href="./crearPropiedad.html">
-                        <button class="btn-crear">Nueva +</button>
-                    </a>
-                    <button class="btn-filtrar">Alquiladas</button>
+                <div class="containter filtros">
+                    <div class="row p-2">
+                        <div class="col">
+                            <select class="form-select campo-filtro" name="tipo" id="tipo">
+                                <div class="dropdown-menu">
+                                    <option selected value="">Tipo</option>
+                                    <option value="casa">Casa</option>
+                                    <option value="departamento">Departamento</option>
+                                    <option value="galpon">Galpón</option>
+                                    <option value="oficina">Oficina</option>
+                                    <option value="terreno">Terreno</option>
+                                    <option value="local">Local</option>
+                                    <option value="otros">Otro</option>
+                                </div>
+                            </select>
+                            <select class="form-select campo-filtro" name="moneda" id="moneda">
+                                <option value="">Monedas</option>
+                                <option value="pesos">Pesos</option>
+                                <option value="dolares">Dólares</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <input class="form-control campo-filtro" type="number" name="min" id="min" placeholder="Monto Min">
+                            <input class="form-control campo-filtro" type="number" name="max" id="max" placeholder="Monto Max">
+                        </div>
+                        <div class="col align-self-center d-flex justify-content-around">
+                            <div class="col text-center">
+                                <button class="btn btn-dark btn-filtrar">Filtrar</button>
+                            </div>
+                            <div class="col text-end">
+                                <button class="btn btn-outline-dark btn-filtrar">Limpiar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="filtros">
-                <div class="izq">
-                    <select class="campo-filtro" name="tipo" id="tipo">
-                    <option value="">Tipo</option>
-                    <option value="casa">Casa</option>
-                    <option value="departamento">Departamento</option>
-                    <option value="galpon">Galpón</option>
-                    <option value="oficina">Oficina</option>
-                    <option value="terreno">Terreno</option>
-                    <option value="local">Local</option>
-                    <option value="otros">Otro</option>
-                    </select>
-                    <select class="campo-filtro" name="moneda" id="moneda">
-                        <option value="">Monedas</option>
-                        <option value="pesos">Pesos</option>
-                        <option value="dolares">Dólares</option>
-                    </select>
-                    <input class="campo-filtro" type="number" name="min" id="min" placeholder="Monto Min">
-                    <input class="campo-filtro" type="number" name="max" id="max" placeholder="Monto Max">
-                </div>
-                <div class="der">
-                    <button class="btn-filtrar">Filtrar</button>
-                    <button class="btn-filtrar">Limpiar</button>
-                </div>
-            </div>
-            <table>
-                <thead>
+            <table class="table table-hover text-center align-middle">
+                <thead class="table-dark">
                     <tr>
                         <th>Tipo</th>
                         <th>Dimensión</th>
@@ -66,18 +96,54 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td >Casa</td>
+                        <td>Pesos</td>
+                        <td>$1,000,000</td>
+                        <td>100m2</td>
+                        <td>Casa en buen estado</td>
+                        <td>
+                            <button class="btn btn-outline-info rounded-circle btn-ver-mas">+</button>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Casa</td>
                         <td>Pesos</td>
                         <td>$1,000,000</td>
                         <td>100m2</td>
                         <td>Casa en buen estado</td>
                         <td>
-                            <button class="btn-ver-mas">+</button>
+                            <button class="btn btn-outline-info rounded-circle btn-ver-mas">+</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
         </div>
     </div>
 </body>
+
 </html>
