@@ -21,10 +21,12 @@ window.onload = function() {
     const password = document.getElementById('pass')
 
     user.onfocus = function() {
-        error.classList.add('oculto');
+        error.classList.add('invisible');
+        user.classList.remove('is-invalid');
     }
     password.onfocus = function() {
-        error.classList.add('oculto');
+        error.classList.add('invisible');
+        password.classList.remove('is-invalid');
     }
 
     btn.addEventListener('click', async(e) => {
@@ -34,7 +36,9 @@ window.onload = function() {
             sessionStorage.setItem('user', user.value);
             window.location.href = './index.html';
         } else {
-            error.classList.remove('oculto');
+            user.classList.add('is-invalid');
+            password.classList.add('is-invalid');
+            error.classList.remove('invisible');
         }
     });
 }

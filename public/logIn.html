@@ -4,20 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/logIn.css">
+    <link rel="stylesheet" href="./styles/bootstrap.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <script type="module" src="./js/logIn.js"></script>
     <title>Affitto Log In</title>
 </head>
-<body>
-    <div class="main-content">
-        <h1>Bienvenido a Affitto</h1>
-    <form>
-        <input type="text" name="user" id="user" placeholder="Usuario">
-        <input type="password" name="pass" id="pass" placeholder="*********">
-        <p class="error-form oculto" id="error">Las credenciales no son válidas</p>
-        <button id="btn-login">Ingresar</button>
-    </form>
+<body class="d-flex align-items-center">
+    <!-- center vertical and horizontaly the login form -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="w-50">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="text-center">Affitto</h1>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group p-3">
+                                <label for="user">Usuario</label>
+                                <input type="text" class="form-control" name="user" id="user" placeholder="user@affito">
+                            </div>
+                            <div class="form-group p-3">
+                                <label for="pass">Contraseña</label>
+                                <input type="password" class="form-control" name="pass" id="pass" placeholder="********">
+                            </div>
+                            <div class="container text-center">
+                                <p class="text-danger invisible" id="error">Las credenciales no son válidas</p>
+                                <button id="btn-login" class="btn btn-primary w-50 m-3">Iniciar Sesión</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
