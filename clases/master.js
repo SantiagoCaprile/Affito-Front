@@ -1,4 +1,5 @@
 import { URL } from '../public/js/utils.js';
+import { Propiedad } from './propiedad.js';
 
 export class Master {
 
@@ -71,5 +72,17 @@ export class Master {
             .then(response => response.json())
             .then(data => data.data);
         return response;
+    }
+
+    async alquilarPropiedad(idPropiedad, inquilinos, garantes, datosContrato) {
+        try {
+            const prop = await this.buscarPropiedad(idPropiedad);
+            const propiedad = new Propiedad(prop.descripcion, prop.dimension, prop.tipo, prop.domicilio.calle, prop.domicilio.altura,
+                prop.domicilio.piso, prop.domicilio.dpto, prop.domicilio.localidad, prop.estado, prop.precio, prop.moneda, prop.cliente, prop.contrato, prop._id);
+            return await propiedad.alquilarPropiedad(inquilinos, garantes, datosContrato);
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
     }
 }

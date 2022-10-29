@@ -22,6 +22,10 @@ window.onload = function() {
         if(propiedad.contrato.length == 0){
             document.getElementsByTagName("table")[0].innerHTML = "No hay historial de contratos para esta propiedad";
         }
+        if(propiedad.estado == "Alquilada"){
+            document.getElementById("btn-alquilar").disabled = true;
+            document.getElementById("btn-seniar").disabled = true;
+        }
     }).catch(err => {
         console.log(err);
     });
