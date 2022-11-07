@@ -1,7 +1,9 @@
 import { Cliente } from '../../clases/cliente.js'
 import { Master } from '../../clases/master.js'
+import { aud_cliente } from '../../clases/aud_cliente.js'
 
 const master = new Master();
+const date = new Date();
 
 window.onload = function() {
     const btn = document.getElementById("btn-crear-cliente");
@@ -17,6 +19,8 @@ window.onload = function() {
     const piso = document.getElementById('piso')
     const dpto = document.getElementById('dpto')
     const localidad = document.getElementById('localidad')
+    const accion = 'Modificacion'
+    const fecha_accion = date;
 
     let validarNombre = () => {
         let valido = true;
@@ -252,6 +256,26 @@ window.onload = function() {
                         localidad.value
                     )
                     cliente.editarCliente();
+                    
+                        const audit_cliente = new aud_cliente(
+                        cuit.value,
+                        nombre.value,
+                        cel.value,
+                        tel.value,
+                        mail.value.toLowerCase(),
+                        iva.value,
+                        calle.value,
+                        altura.value,
+                        piso.value,
+                        dpto.value,
+                        localidad.value,
+                        accion,
+                        fecha_accion
+                        )
+                    /* faltaria hacer que guardarAudCliente se ejecute si editarCliente se ejecuto con éxito
+                    Tambien hay que hacer que accion se complete de otra forma ya que si la accion es crear
+                    o eliminar no se guardaria exitosamente*/
+                    audit_cliente.guardarAudCliente();                    
                     alert("Editado correctamente")
                     window.location.href = "/public/clientes.html"
                 }
